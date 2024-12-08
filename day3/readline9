@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# To read the lines from a file within shell script
+
+file="/home/nix/seinfeld-characters"
+
+# Check if the file exists (-e purpose is to check if the file exists or not)
+if [ -e "$file" ]; then
+while IFS= read -r line; do
+echo "line read: $line"
+# Adding a little bit of processing logic
+done< "$file"
+else 
+echo "File not found: $file"
+fi

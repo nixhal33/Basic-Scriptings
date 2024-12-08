@@ -1,0 +1,15 @@
+#!/bin/bash
+clear
+
+# prompting the user until they yes otherwise user will not get prompt back
+
+answer=""
+
+# keep asking the user until the answer is yes
+while [ "$answer" != "yes" ]; do
+
+	echo "Do you want to continue ? If you do want then please type 'yes' to proceed"
+
+read answer
+done
+echo " Thank you! Now you can move on...."

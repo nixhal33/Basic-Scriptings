@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# 1.First of all creating a random file just for fun with some random text
+randomfile="randomfile.txt"
+echo "This is a random file. I repeat this a random file and. again i repeat this is a random file."> $randomfile
+echo "Randomfile is created: $randomfile."
+cat $randomfile
+# 2.Find a file in a current directory
+echo "Enter the name of a file you want to search: "
+read file
+# 3.Check if the file you have written in the console exists or not?
+if [ -f "$file" ]; then
+echo "File name found : '$file' "
+# 4.Read the file and see the duplicates 
+echo "Since file has been found. Reading the texts and trying to remove the duplicates......."
+cat $file
+# 5.logic to remove the duplicate words
+updated_content=$(cat "$file" | tr ' ' '\n' | sort | uniq | tr '\n' ' ')
+# 6.Saving the updated content to a file..
+echo "$updated_content"> "$file"
+# 7.Displaying the messages and updated content of file
+echo "Duplicates removed from '$file' .Here's the updated content:"
+cat $file
+else
+echo "File '$file' not found."
+fi

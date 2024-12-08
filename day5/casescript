@@ -1,0 +1,47 @@
+#!/bin/ksh
+
+# automating the commands using case script
+clear
+echo
+echo " Please choose the options below (any one of them) "
+echo
+echo '1 = DISPLAY DATE AND TIME'
+echo '2 = LIST THE FILES AND DIRECTORES'
+echo '3 = LIST THE NO. OF USERS LOGGED IN'
+echo '4 = CHECK THE SYSTEM UPTIME'
+echo '5 = Simply show the hostname of the system'
+echo '6 = LIST THE SYSTEMS ENTIRE INFORMATION'
+echo '7 = TO SEE THE ENTIRE SIZE OF THE SYSTEM'
+echo '8 = TO SEE TOTAL NO. OF USERNAME IN /ETC/PASSWD '
+echo '9 = TO SEE ALL RUNNING PROCESS IN FULL FORMAT'
+echo '10 = TO ASK FOR SOSREPORT'
+
+	read choice
+
+	case $choice in
+
+
+		1) date;;
+
+		2) ls ;;
+
+		3) who;;
+
+		4) uptime;;
+
+		5) hostname;;
+
+		6) uname;;
+
+		7) df;;
+
+		8) awk -F: '{print $1}' /home/nix | wc -l
+
+		9) ps -ef;;
+
+		10) sosreport;;
+
+		echo
+
+
+	esae

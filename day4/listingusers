@@ -1,0 +1,7 @@
+#!/bin/bash
+
+i=1
+for users in `awk -F: '{print $1}' /etc/passwd `; do
+echo "Username $((i++)) : $users"
+done
+ 

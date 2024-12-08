@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Script that search for a specific word in a file and counts its occurence
+
+echo "Enter the word you want to search : "
+read word
+echo "Enter the filename: "
+read filename
+count=$(grep -o -w "$word" "$filename" |wc -l)
+echo "The word '$word' appears $count times in a $filename"
+

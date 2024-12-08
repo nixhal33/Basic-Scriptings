@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Here i am gonna define the cleanup funtion
+cleanup(){
+echo "Script interrupted. Performing the cleanup...."
+
+# Some of example of cleanup actions
+
+# 1.Removing the temporary files
+if [ -f /tmp/mytempfile ]; then
+echo "Removing the temporary files" 
+rm -f /tmp/mytempfile
+fi 
+
+# 2.Close any open file descriptors(if needed)
+exec 3>&-
+
+# 3.Kill background process(if any were started by the script)
+if [ -n "$bg_pid" ]; then
+echo "Killing the bg process with the PID: $bg_pid"
+kill $bg_pid
+fi
+
+# * Now exit with code 1(interrupted) *
+exit 1
+}
+
+# Setup the trap to call the cleanup function when ctrl+c is received
+trap cleanup SIGINT
+
+# Rest of the script 
+echo "Running.... still....."
+
+# 1.Creating some temp file to simulate or show some kind of work is going on
+echo "Creating some random temp file..."
+touch /tmp/mytempfile
+
+# 2.Simulate a background process(for eg. long-running task)
+sleep 100 &
+bg_pid=$!
+
+# 3.Simulate some long running task
+for i in {1..100}; do
+echo "Processing step $i..."
+sleep 2
+done
+
+# After finishing, cleanup the temp file manually (cleanup will do this if it's interrupted)
+rm -f /tmp/mytempfile
+
+# Finished the script finally!!!
+echo "Finished."
+
+

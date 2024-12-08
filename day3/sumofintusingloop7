@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Finding the sum of integers from 1 to N no. using the loop
+
+echo "Read the Number (n):"
+read n
+sum=0
+for((i=1;i<=$n;i++)); do
+sum=$((sum+i))
+done
+echo "Sum of ints from 1 to $n is : $sum"

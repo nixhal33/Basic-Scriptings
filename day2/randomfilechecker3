@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# creating a script that will ask for a name of a file to search it
+
+echo "Enter the name of a file you want to find: "
+read name 
+
+#if condition and to end if condition always end it with "fi"
+# here i found "-e:checks all file regardless of it's type and " -f:checks only for a file" 
+# for upper or lowercase ignorance this "found" is used
+# for if the file is found then if it's readable then read it 
+
+found=$(find . -maxdepth 1 -iname "$name")
+
+if [ -e "$name" ];then
+echo "File is here: $name"
+
+# checking if the file is readable or not\
+	if [ -r "$name" ];then 
+	echo "file is readable: '$name'. Here are it's contents:"
+	cat "$name"
+	else
+	echo "file is not readable: '$name'."
+	fi
+else
+echo "Sorry the file is not here: $name"
+fi
+

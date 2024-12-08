@@ -1,0 +1,7 @@
+#!/bin/bash
+# how to use cmd line arguments in shell scripts.
+
+echo "Hello, This is nix : $1"
+echo "Hello, This is neha : $0"
+echo "Hello, This is mata : $3"
+

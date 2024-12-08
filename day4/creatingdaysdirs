@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# First here, i am gonna define the directory where i ll create a subdirectories
+base_dir="/home/nix/learningscripts"
+
+# Initialize the day counter starting from 5
+day=5
+
+# Defining the current weekday using the 'date' command and '%a' format for the day abbreviation
+current_day=$(date +%a)
+
+# Creating the array of weekdays from MON to FRI
+weekdays=("Mon" "Tue" "Wed" "Thu" "Fri")
+
+# Creating a function that get the next weekday
+getnextweekday(){
+for i in "${!weekdays[@]}"; do
+if [ "${weekdays[$i]}" = "$current_day" ]; then
+echo "${weekdays[$i+1]}"
+break
+fi
+done
+}
+
+# Main do-while loop to create directories until friday is reached 
+while [ "$current_day" != "Fri" ]; do
+# Creating a directory for a current day
+new_dir="$base_dir/day$day"
+if [ ! -d "$new_dir" ]; then
+mkdir "$new_dir"
+echo "Directory created: $new_dir"
+fi
+
+#incrementing the day and update the current day
+day=$((day+1))
+current_day=$(getnextweekday)
+
+# Sleeping for 24hrs (simulating to run this everyday)
+sleep 86400
+done 
+
+# Finally all directories upto friday have been created will be echo'd down here
+echo "ALL DIRECTORIES UPTO FRIDAY HAVE BEEN CREATED! THANK YOU FOR USING ME!!!!"
+

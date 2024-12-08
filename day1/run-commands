@@ -1,0 +1,19 @@
+
+#!/bin/bash
+
+# Defining a small tasks and running some simple commands 
+
+# Date B.S: 2081/05/28 / A.D; 09/13/2024
+# I am gonna use empty "echo" to get a space in my output you can check it out by running the script hehe...
+
+whoami
+echo This is my second script for day1.
+echo
+pwd
+echo
+echo I am happy that i have learned scripting today.
+echo
+ls -ltr
+echo
+echo Feeling really good  
+echo

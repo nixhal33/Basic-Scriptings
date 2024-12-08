@@ -1,0 +1,8 @@
+#!/bin/bash
+# Listing weekdays bitch..
+
+i=1
+for day in mon tue wed thu fri; do
+echo "Weekday $((i++)) : $day"
+done
+

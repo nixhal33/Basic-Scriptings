@@ -1,0 +1,15 @@
+#!/bin/bash
+# Here, for i in 1 2 3 4 5...... means `i` is the container that holds 1 2 3 4 5....... and same goes with j too
+
+clear
+echo
+for i in 1 2 3 4 5 6 7 8 9 10 11 12 13
+do 
+echo Mu $i khanxu
+done
+echo
+for j in eat sleep shit repeat
+do 
+echo Nix $j
+done
+

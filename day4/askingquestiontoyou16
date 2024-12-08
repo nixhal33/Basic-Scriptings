@@ -1,0 +1,24 @@
+#!/bin/ksh
+
+# Just some question for you 
+# Asking the user his/her name, where do he works , if he liking or not liking the work (y/n) and on
+
+clear
+echo " What's your name sir? "
+
+read name
+echo
+echo "Hello! '$name' "
+echo 
+echo "Which field are you working right now? "
+echo 
+read field
+echo 
+echo "Are you liking your job? (y/n) "
+read like
+if [ "$like" == y ]; then
+echo "Great, Good luck to you for your more future endevours"
+elif [ "$like" == n ]; then
+echo "Come on man, Don't get so upset. I bet you will get more successful following years!"
+echo 
+fi

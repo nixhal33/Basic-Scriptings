@@ -1,0 +1,13 @@
+#!/bin/bash
+# Example of assigning the variables to strings
+
+a=Nix
+b=lindo
+c="Mata Shree"
+d="Pita Shree"
+
+echo "My Name is $a"
+echo "My sister name is $b"
+echo "My mom name is $c"
+echo "My father name is $d"
+

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# to calculate the total size of all files in a directory
+
+directory="/home/nix"
+totalsize=$(du -csh "$directory" | grep total | awk '{print $1}' )
+echo "Total size of all files in a directory is $totalsize"
+ 

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# To use the loog to iterate through the list of values.
+# here i am gonna use do while type of command but differs in linux 
+# it will look like "-- for wwe in "${wwe[@]}"; do --" --> this is for loop condition and "done" statement will end the for loop  
+
+wwe=("roman reigns" "cody roades" "bobby roodes" "solo sikoa" "jacob fatu")
+for wwe in "${wwe[@]}"; do
+echo "Current best wwesuperstars are: $wwe"
+done 

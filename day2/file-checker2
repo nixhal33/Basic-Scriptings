@@ -1,0 +1,12 @@
+#!/bin/sh
+
+file="readme"
+
+# checking if the file exists or not in a current directory
+
+if [ -e "$file" ]; then 
+echo "file is here:$file"
+else
+echo "file is not here:$file"
+fi
+

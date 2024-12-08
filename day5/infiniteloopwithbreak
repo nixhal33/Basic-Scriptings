@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# making a infinite loop with break condition
+
+c=1
+while true; do
+echo "Iteration : $c"
+((c++))
+
+if [ $c -gt 50 ]; then
+sleep 3
+break
+fi
+done
+
+echo "loop stopped after '$c' iteration."

@@ -1,0 +1,22 @@
+#!/bin/bash
+#Defining the function to calculate factorial
+
+# Here calc_fac is a function and that num=$1 and fac=1 means this function can take 1 argument and one number 
+calc_fac(){
+num=$1
+fac=1
+for((i=1;i<=num;i++)); do
+fac=$((fac *i))
+done 
+echo $fac
+}
+
+# Prompting a user to input a numbher
+echo "Enter a number: "
+read no
+
+# Call the calc_fac function with the n 
+fac_result=$(calc_fac $no)
+
+# Displaying the factorial result
+echo "Factorial of $no is: $fac_result"

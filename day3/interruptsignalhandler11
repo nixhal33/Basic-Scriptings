@@ -1,0 +1,13 @@
+#!/bin/bash
+cleanup(){
+echo "Script interrupted. Performing the cleanup.... "
+# Adding the cleanup actions here
+exit 1
+}
+# Set a trap to call the cleanup function when ctrl+c is received
+
+trap cleanup SIGINT
+# Rest of the script
+echo "Running...."
+sleep 10
+echo "finished."

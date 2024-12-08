@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# simply to print hostname
+a=`hostname`
+echo
+echo my server name is $a
+echo what is your name?
+read b
+echo My name is $b
+echo 

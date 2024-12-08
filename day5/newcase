@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# new case script
+
+echo "Please choose the any one option"
+echo
+echo 'a = list the date and time'
+echo 'b = list dir'
+echo 'c = list users looged in'
+echo 'd = list system uptime'
+echo
+
+	read choice
+
+	case $choice in 
+
+		a) date;;
+
+		b) ls;;
+		
+		c) who;;
+		
+		d) uptime;;
+
+		*)echo "Invalid choice - Bye."
+
+		esac
+

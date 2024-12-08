@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# simply initialize c=1
+
+c=1
+
+while [ $c -le 5 ]; do
+echo "welcome to this world $c times"
+((c++))
+done
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+# Ask the user for their name and greet them
+
+echo "Hello Sir What's your Name?"
+
+# Here this *read name* this read command waits for you to input text and store it in a variable called name.
+# name is used as a variable.
+read name 
+
+#Greet the user
+echo "Hello,$name! Nice to meet You."
+
+

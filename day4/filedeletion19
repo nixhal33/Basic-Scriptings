@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Removing multiple files using for loop
+
+for i in {1..10}; do
+rm $i
+done
+

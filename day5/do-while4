@@ -1,0 +1,11 @@
+#!/bin/bash
+clear
+# Printing the sum from 1 to 100
+s=0
+n=1
+while [ $n -le 100 ]; do
+s=$((s + n))
+((n++))
+done
+echo "Sum of 1 to 100 is $s"
+
